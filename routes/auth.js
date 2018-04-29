@@ -7,7 +7,7 @@ router.get('/google', passport.authenticate('google', {scope: ['profile', 'email
 
 router.get('/google/callback', 
   passport.authenticate('google', { failureRedirect: '/' }),(req, res) => {
-    res.redirect('/');
+    res.redirect('/dashboard');
   });
 
   router.get('/verify', (req,res)=>{
@@ -20,7 +20,7 @@ router.get('/google/callback',
 
   router.get('/logout', (req, res)=>{
     req.logout();
-    res.redirect('/');
+    res.redirect('/dashboard');
   })
 
 module.exports = router;
