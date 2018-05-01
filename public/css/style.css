@@ -29,3 +29,8 @@ footer{
 #delete-form{
   display: inline;
 }
+
+#about_img {
+  width: 200px;
+  height: 200px;
+}
