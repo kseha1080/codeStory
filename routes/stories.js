@@ -34,6 +34,18 @@ router.get('/add', ensureAuthenticated, (req, res) => {
   res.render('stories/add');
 });
 
+// Edit Story Form
+router.get('/edit/:id', ensureAuthenticated, (req, res) => {
+  Story.findOne({
+    _id: req.params.id
+  })
+  .then(story => {
+    res.render('stories/edit', {
+      story: story
+    });
+  });
+});
+
 // Process Add Story
 router.post('/', (req, res) => {
   let allowComments;
@@ -59,5 +71,39 @@ router.post('/', (req, res) => {
       res.redirect(`/stories/show/${story.id}`);
     });
 });
+
+// edit code of the edit code
+router.put('/:id', (req, res) => {
+  Story.findOne({
+    _id: req.params.id
+  })
+  .then(story => {
+    let allowComments;
+
+  if(req.body.allowComments){
+    allowComments = true;
+  } else {
+    allowComments = false;
+  } 
+   //new values
+  story.title = req.body.title;
+  story.body = req.body.body;
+  story.status = req.body.status;
+  story.allowComments = allowComments;
+
+  story.save()
+    .then(story => {
+      res.redirect('/dashboard')
+    })
+  });
+});
+
+// Delete form
+router.delete('/:id', (req, res) =>{
+  Story.remove({_id: req.params.id})
+  .then(() => {
+    res.redirect('/dashboard');
+  });
+})
 
 module.exports = router;

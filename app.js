@@ -3,6 +3,7 @@ const exphbs = require('express-handlebars')
 const path = require('path')
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser')
+const methodOverride = require('method-override')
 //var cookieParser = require('cookie-parser')
 const session = require('express-session');
 const passport = require('passport');
@@ -26,7 +27,8 @@ const keys = require('./config/keys')
 //handlebars helpers
 const {
   truncate,
-  stripTags
+  stripTags,
+  select
 } = require('./helpers/hbs')
 
 
@@ -43,14 +45,21 @@ mongoose.connect(keys.mongoURI, {
 const app = express();
 
 
+
+//body-parse middleware
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
+
+//method override middleware
+app.use(methodOverride('_method'));
+
 
 //HandleBars middleware
 app.engine('handlebars', exphbs({
   helpers:{
     truncate: truncate,
-    stripTags: stripTags
+    stripTags: stripTags,
+    select: select
   },
   defaultLayout: 'main'
 }));
