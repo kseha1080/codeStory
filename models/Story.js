@@ -9,15 +9,29 @@ const StorySchema = new Schema({
   },
   body:{
     type: String,
-    required: true
+    required: false
   },
   status: {
     type: String,
-    default:'public'
+    default:'select'
+  },
+  category: {
+    type: String,
+    default: 'select'
   },
   allowComments: {
     type: Boolean,
     default:true
+  },
+  description: {
+    type: String,
+  },
+  languages: {
+    type: String,
+    default: 'select'
+  },
+  repolink: {
+    type: String
   },
   comments: [{
     commentBody: {

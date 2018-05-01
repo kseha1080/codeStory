@@ -1,6 +1,6 @@
 <h1>edit code</h1>
 <div class="row">
-  <form action="/stories/{{story.id}}?_method=PUT" method="post" class="col s12">
+  <form action="/stories/{{story.id}}?_method=PUT" method="post" class="col s">
     <input type="hidden" name="_method" value="PUT">
     <div class="row">
       <div class="input-field">
@@ -13,11 +13,60 @@
       <div class="input-field">
         <select name="status">
           {{#select story.status}}
-          <option value="public" selected>Public</option>
+          <option value="select" disabled selected>Select</option>
+          <option value="public">Public</option>
           <option value="private">Private</option>
           {{/select}}
         </select>
         <label for="status">Status</label>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="input-field">
+        <select name="category">
+          {{#select story.category}}
+          <option value="select" disabled selected>Select</option>
+          <option value="games">Game</option>
+          <option value="website">Website</option>
+          <option value="app">Mobile App</option>
+          <option value="framework">Framework</option>
+          {{/select}}
+        </select>
+        <label for="category">Category</label>
+      </div>
+    </div>
+
+    <div class="row">
+    <select name="languages" multiple>
+      {{#select story.languages}}
+      <option value="languages" disabled selected>Select languages</option>
+      <option value="javascript">Javascript</option>
+      <option value="python">Python</option>
+      <option value="ruby">Ruby</option>
+      <option value="htmlcss">HTML & CSS</option>
+      <option value="java">Java</option>
+      <option value="c">C++, C#</option>
+      <option value="objectivec">Objective C</option>
+      <option value="sql">SQL</option>
+      <option value="php">PHP</option>
+      <option value="ios">IOS / Swift</option>
+      {{/select}}
+    </select>
+    <label>Languages</label>
+  </div>
+
+    <div class="row">
+      <div class="input-field">
+        <input type="text" name="repolink" value="{{story.repolink}}">
+        <label for="repolink">Repository Link</label>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="input-field">
+        <input type="text" name="description" value="{{story.description}}">
+        <label for="description">Description</label>
       </div>
     </div>
 
