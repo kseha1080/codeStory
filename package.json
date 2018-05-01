@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/ventolucci/codeStory#readme",
   "dependencies": {
+    "body-parser": "^1.18.2",
     "express": "^4.16.3",
     "express-handlebars": "^3.0.0",
     "express-session": "^1.15.6",
