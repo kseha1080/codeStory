@@ -4,7 +4,6 @@ const path = require('path')
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser')
 const methodOverride = require('method-override')
-//var cookieParser = require('cookie-parser')
 const session = require('express-session');
 const passport = require('passport');
 
@@ -28,7 +27,8 @@ const keys = require('./config/keys')
 const {
   truncate,
   stripTags,
-  select
+  select,
+  editIcon
 } = require('./helpers/hbs')
 
 
@@ -59,14 +59,15 @@ app.engine('handlebars', exphbs({
   helpers:{
     truncate: truncate,
     stripTags: stripTags,
-    select: select
+    select: select,
+    editIcon: editIcon
   },
   defaultLayout: 'main'
 }));
 app.set('view engine', 'handlebars');
 
 
-//app.use(cookieParser());
+// session middleware
 app.use(session({
   secret: 'secret',
   resave: false,
