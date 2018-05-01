@@ -102,7 +102,11 @@ router.post('/', (req, res) => {
     body: req.body.body,
     status: req.body.status,
     allowComments:allowComments,
-    user: req.user.id
+    user: req.user.id,
+    category: req.body.category,
+    languages: req.body.languages,
+    description: req.body.description,
+    repolink: req.body.repolink
   }
 
   // Create Story
@@ -131,6 +135,7 @@ router.put('/:id', (req, res) => {
   story.body = req.body.body;
   story.status = req.body.status;
   story.allowComments = allowComments;
+  
 
   story.save()
     .then(story => {
