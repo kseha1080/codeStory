@@ -64,4 +64,9 @@ a.btn:hover {
 
 .profile-img {
   width: 200px;
+  font-family: 'Gugi', cursive;
+}
+
+.gitLink {
+  color: red;
 }
