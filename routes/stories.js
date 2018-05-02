@@ -35,9 +35,12 @@ router.get('/user/:userId', (req, res) => {
   Story.find({user: req.params.userId, status: 'public'})
   .populate('user')
   .then(stories => {
-    console.log(stories)
+
+    //if the user doesn't have any stories then you want to get the user info by itself
+    console.log("Story User: ", stories[0].user)
      res.render('index/profile',{
-       stories: stories
+       stories: stories,
+       user: stories[0].user, 
      });
   });
 });
