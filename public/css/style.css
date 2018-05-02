@@ -2,31 +2,43 @@ body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
-  
 }
 
 main {
   flex: 1 0 auto;
+  background-color: rgb(226, 226, 226);
+  height: 100%;
 }
 
-.nav-wrapper .fa-bars{
+.welcome {
+  width: 100vw;
+  height: 100vh;
+  background: url("../images/laptop.png") no-repeat center;
+  background-size: auto;
+}
+
+.welcome-text {
+  padding: 120px 200px 120px 200px !important;
+}
+
+.codestory-span {
+  color: crimson;
+}
+
+.nav-wrapper .fa-bars {
   font-size: 35px;
 }
 
-footer{
-  margin-top: 20px;
- 
+.story-text {
+  height: 100%;
+  margin: 25px!important;
 }
 
-.story-text{
-  height: 100px;
-}
-
-.dash-status{
+.dash-status {
   text-transform: capitalize;
 }
 
-#delete-form{
+#delete-form {
   display: inline;
 }
 
@@ -36,5 +48,20 @@ footer{
 }
 
 .gugi {
-  font-family: 'Gugi', cursive;
+  font-family: "Gugi", cursive;
+}
+
+.card-feed {
+  width:50%;
+  margin: auto;
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+
+a.btn:hover {
+  background: crimson !important;
+}
+
+.profile-img {
+  width: 200px;
 }

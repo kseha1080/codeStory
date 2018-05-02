@@ -1,8 +1,90 @@
-<h1>Welcome</h1>
-<p class="gugi">Post code from the best and worst of your life</p>
-{{#if user}}
-{{else}}
-<a class="btn red darken-1" href="/auth/google"><i class="fa fa-google left"></i> Login With Google</a>
-{{/if}}
+<div class="row">
+  <div class="col m12 welcome">
+    <div class="row">
+      <div class="col sm12 m12 welcome-text">
 
-<p class="gugi">This app is designed to allow developers to share their projects with other developers.  Whether it be a game, website, or anything else you've coded.  Share it here and see what the community thinks.  You can like posts and comment on them, checkout other developer's completed applications, or visit the user's github repo and see the actual code.  Follow your favorite coders or checkout what's popular.</p>
+        <div id="landing-id"></div>
+        <h4 class="codestory-h4">Welcome to code<span class="codestory-span">S</span>tory</h4>
+
+<div id="landing-p"></div>
+        <p class="gugi landing-p">This app is designed to allow developers to share their projects with other developers. Share your work with the rest of the developer community. This app was built by coders, for coders...</p>
+
+        {{#if user}} {{else}}
+        <div id="landing-btn"></div>
+        <a class="btn red darken-1 landing-btn" href="/auth/google">
+          <i class="fa fa-google left"></i> Login With Google</a>
+        {{/if}}
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous">
+</script>
+
+<script>
+  $(document).ready(function () {
+
+
+    $(".codestory-h4").hide();
+    $("#landing-id").show();
+
+    $(".codestory-h4")
+      .delay(14000)
+      .show(2000);
+
+    $("#landing-id")
+      .delay(14000)
+      .hide(2000);
+
+      $(".landing-btn").hide();
+    $("#landing-btn").show();
+
+    $(".landing-btn")
+      .delay(14000)
+      .show(2000);
+
+    $("#landing-btn")
+      .delay(14000)
+      .hide(2000);
+
+      
+  $("#landing-p").show();
+  $(".landing-p").hide();
+  
+    $("#landing-p")
+    .delay(14000)
+    .show(3500);
+
+    $(".landing-p")
+    .delay(14000)
+    .show(2500);
+
+
+    var str =
+      "<p> &lt;h1&gt; Welcome to codeStory &lt;/h1&gt; </p> <p> &lt;p&gt; This app is designed to allow developers to share their projects with other developers. Share your work with the rest of the developer community. This app was built by coders, for coders... &lt;/p&gt;; </p> <p> &lt;button&gt; Sign up with Google &lt;/button&gt;; </p>",
+      a = 0,
+      itag,
+      txt;
+
+    (function type() {
+      txt = str.slice(0, ++a);
+      if (txt === str) return;
+
+      document.getElementById("landing-id").innerHTML = txt;
+
+      var charr = txt.slice(-1);
+      if (charr === "<") itag = true;
+      if (charr === ">") itag = false;
+
+      if (itag) return type();
+      setTimeout(type, 40);
+    })();
+
+   
+
+  });
+
+</script>
