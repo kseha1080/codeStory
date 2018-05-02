@@ -35,23 +35,10 @@ router.get('/user/:userId', (req, res) => {
   Story.find({user: req.params.userId, status: 'public'})
   .populate('user')
   .then(stories => {
-   if(story.status == 'public'){
-     res.render('stories/show',{
-       story: story
+    console.log(stories)
+     res.render('index/profile',{
+       stories: stories
      });
-   } else {
-    if(res.user){
-      if(req.user.id == story.user._id){
-        res.render('stories/show',{
-          story: story
-        });
-      } else {
-        res.redirect('/stories')
-      }
-    } else {
-      res.redirect('/stories');
-    }
-   }
   });
 });
 

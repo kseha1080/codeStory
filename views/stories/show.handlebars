@@ -18,6 +18,9 @@
         <img src="{{story.user.image}}" class='square responsive-img'>
       </div>
       <div class="card-action">
+        {{#each stories.user.id}}
+          {{this}}
+        {{/each}}
         <a href="/stories/user/{{story.user.id}}">More From {{story.user.firstName}}</a>
       </div>
     </div>

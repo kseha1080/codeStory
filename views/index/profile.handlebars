@@ -1,0 +1,27 @@
+<h1>Welcome {{user.firstname}}</h1>
+<h4>You Code</h4>
+{{#if stories}}
+<table class="striped">
+  <thead>
+    <tr>
+      <th>Title</th>
+      
+      <th>Status</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each stories}}
+    <tr>
+      <td><a href="/stories/show/{{user.id}}">{{title}}</a></td>
+      <td><span class="dash-status">{{status}}</span></td>
+
+      </td>
+    </tr>
+    {{/each}}
+  </tbody>
+
+</table>
+{{else}}
+  <p>What are you waiting make some code</p>
+{{/if}}
