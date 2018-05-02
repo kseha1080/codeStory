@@ -7,7 +7,7 @@
         <h4 class="codestory-h4">Welcome to code<span class="codestory-span">S</span>tory</h4>
 
 <div id="landing-p"></div>
-        <p class="gugi landing-p">This app is designed to allow developers to share their projects with other developers. Share your work with the rest of the developer community. This app was built by coders, for coders...</p>
+        <p class="gugi landing-p">This app was built by coders, for coders...</p>
 
         {{#if user}} {{else}}
         <div id="landing-btn"></div>
@@ -32,22 +32,22 @@
     $("#landing-id").show();
 
     $(".codestory-h4")
-      .delay(14000)
+      .delay(8250)
       .show(2000);
 
     $("#landing-id")
-      .delay(14000)
+      .delay(8250)
       .hide(2000);
 
       $(".landing-btn").hide();
     $("#landing-btn").show();
 
     $(".landing-btn")
-      .delay(14000)
+      .delay(8250)
       .show(2000);
 
     $("#landing-btn")
-      .delay(14000)
+      .delay(8250)
       .hide(2000);
 
       
@@ -55,16 +55,16 @@
   $(".landing-p").hide();
   
     $("#landing-p")
-    .delay(14000)
+    .delay(8250)
     .show(3500);
 
     $(".landing-p")
-    .delay(14000)
+    .delay(8250)
     .show(2500);
 
 
     var str =
-      "<p> &lt;h1&gt; Welcome to codeStory &lt;/h1&gt; </p> <p> &lt;p&gt; This app is designed to allow developers to share their projects with other developers. Share your work with the rest of the developer community. This app was built by coders, for coders... &lt;/p&gt;; </p> <p> &lt;button&gt; Sign up with Google &lt;/button&gt;; </p>",
+      "<p> &lt;h1&gt; Welcome to codeStory &lt;/h1&gt; </p> <p> &lt;p&gt; This app was built by coders, for coders... &lt;/p&gt; </p> <p> &lt;button&gt; Sign up with Google &lt;/button&gt; </p>",
       a = 0,
       itag,
       txt;
@@ -80,7 +80,7 @@
       if (charr === ">") itag = false;
 
       if (itag) return type();
-      setTimeout(type, 40);
+      setTimeout(type, 45);
     })();
 
    
